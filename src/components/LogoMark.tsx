@@ -11,13 +11,13 @@ export function LogoMark() {
       <img
         src={logoLightSrc}
         alt="Paynvo Logo"
-        className="block dark:hidden h-9 w-auto" // `block` makes it visible, `dark:hidden` hides it
+        className="block dark:hidden h-9 " // `block` makes it visible, `dark:hidden` hides it
       />
       {/* Dark Mode Logo: Hidden by default, visible in dark mode */}
       <img
         src={logoDarkSrc}
         alt="Paynvo Logo"
-        className="hidden dark:block h-9 w-auto" // `hidden` hides it, `dark:block` shows it
+        className="hidden dark:block h-9 " // `hidden` hides it, `dark:block` shows it
       />
     </>
   );

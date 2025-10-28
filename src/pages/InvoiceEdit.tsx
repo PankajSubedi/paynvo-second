@@ -116,7 +116,7 @@ export default function InvoiceEdit() {
       const selectedClient = clients.find(c => c.id?.toString() === selectedClientId);
       const updatedInvoiceData: Invoice = {
         ...invoice,
-        clients: selectedClient ? { name: selectedClient.name, email: selectedClient.email, billing_address: selectedClient.billing_address, tax_id: selectedClient.tax_id } : invoice.clients,
+        clients: selectedClient ? { name: selectedClient.name, email: selectedClient.email, phone:selectedClient.phone, billing_address: selectedClient.billing_address, tax_id: selectedClient.tax_id } : invoice.clients,
         subtotal: totals.subtotal,
         discount_total: totals.discount,
         tax_total: totals.tax,

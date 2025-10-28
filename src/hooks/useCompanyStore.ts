@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback } from 'react';
 export interface Company {
   id: string;
   name: string;
+  email: string;
+  phoneNumber: string;
   default_currency: string;
   invoice_prefix: string;
   invoice_next_number: number;
@@ -17,6 +19,8 @@ const STORAGE_KEY = 'invoice_company_settings';
 // Default settings if none are found in local storage
 const DEFAULT_COMPANY: Company = {
   id: 'default-company-01',
+  email: '',
+  phoneNumber: '',
   name: 'My Company',
   default_currency: 'USD',
   invoice_prefix: 'INV',

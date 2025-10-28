@@ -126,7 +126,7 @@ const STATUS_COLORS: { [key: string]: string } = {
         description="Get a real-time overview of your business finances. Track total revenue, outstanding payments, and recent invoices at a glance."
         keywords="invoice dashboard, business analytics, revenue tracking, financial overview, paynvo"
       />
-      <div className="space-y-8 animate-fade-in">
+      <div className=" px-2 space-y-8 animate-fade-in">
         <div>
           <h1 className="text-3xl font-bold">Dashboard</h1>
           <p className="text-muted-foreground">Welcome back! Here's a summary of your business.</p>

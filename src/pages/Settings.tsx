@@ -367,6 +367,8 @@ export default function Settings() {
   // Local state for the form, to be synced with the hook's state
   const [formData, setFormData] = useState<Omit<Company, 'id'>>({
     name: "",
+    email: "",
+    phoneNumber: '',
     address: "",
     tax_id: "",
     default_currency: "USD",
@@ -380,6 +382,8 @@ export default function Settings() {
     if (company) {
       setFormData({
         name: company.name || "",
+        email: company.email || "",
+        phoneNumber: company.phoneNumber || "",
         address: company.address || "",
         tax_id: company.tax_id || "",
         default_currency: company.default_currency || "USD",
@@ -457,7 +461,7 @@ export default function Settings() {
   description="Configure your company information, upload your logo, and customize invoice preferences. Manage your data with our secure backup and restore feature."
   keywords="invoice settings, company settings, configure paynvo, backup data, export data, invoice preferences"
 />
-      <div className="p-8 max-w-4xl">
+      <div className="p-2 max-w-4xl">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Settings</h1>
           <p className="text-muted-foreground">Manage your company and invoice settings</p>
@@ -484,7 +488,9 @@ export default function Settings() {
             <h2 className="text-xl font-semibold mb-4">Company Information</h2>
             <div className="space-y-4">
               <div className="space-y-2"><Label htmlFor="name">Company Name *</Label><Input id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required/></div>
-              <div className="space-y-2"><Label htmlFor="address">Address</Label><Textarea id="address" value={formData.address} onChange={(e) => setFormData({ ...formData, address: e.target.value })} rows={3}/></div>
+              <div className="space-y-2"><Label htmlFor="phoneNumber">Phone Number</Label><Input id="phoneNumber" type="number" value={formData.phoneNumber} onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}/></div>
+              <div className="space-y-2"><Label htmlFor="email">Email Address</Label><Input id="email" type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}/></div>
+              <div className="space-y-2"><Label htmlFor="address">Address *</Label><Textarea id="address" value={formData.address} onChange={(e) => setFormData({ ...formData, address: e.target.value })} rows={3} required/></div>
               <div className="space-y-2"><Label htmlFor="tax_id">Tax ID / VAT Number</Label><Input id="tax_id" value={formData.tax_id} onChange={(e) => setFormData({ ...formData, tax_id: e.target.value })}/></div>
             </div>
           </Card>
