@@ -155,7 +155,7 @@ export const InvoicePDFTemplate = ({ invoice, company }: InvoicePDFTemplateProps
           {/* --- THIS IS THE NEW BLOCK TO ADD --- */}
           {invoice.payment_method.type === "cash" && (
             <div className="space-y-2 text-sm text-gray-600">
-              <p><strong>Method:</strong> Cash</p>
+              <p><strong>Method:</strong>Cash</p>
             </div>
           )}
           {/* --- END OF NEW BLOCK --- */}
